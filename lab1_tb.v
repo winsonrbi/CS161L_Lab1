@@ -127,7 +127,6 @@ module lab1_tb;
 		if(R != result) $display ("Result is wrong");
 		if(zero != 1'b0) $display("Zero is wrong");
 		if(carryout != 1'b0) $display("Carryout is wrong");
-
 		// ---------------------------------------------
 		// Testing signed adds 
 		// --------------------------------------------- 
@@ -151,7 +150,31 @@ module lab1_tb;
 		if(R != result) $display ("Result is wrong");
 		if(zero != 1'b0) $display("Zero is wrong");
 		if(carryout != 1'b0) $display("Carryout is wrong");	
-		if(overflow != 1'b1) $display("Overflow is wrong");		
+		if(overflow != 1'b1) $display("Overflow is wrong");
+		// ---------------------------------------------
+		// Testing signed subs 
+		// --------------------------------------------- 
+		$display("TC41 Signed Subtraction");
+		opcode = 3'b011; //Subtracting a Large positive number with a negative number that causes overflow
+		A = 8'h7F;
+		B = 8'h80;
+		R = 8'hFF;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b0) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");
+		if(overflow != 1'b1) $display("Overflow is wrong");
+
+		$display("TC42 Signed Subtraction");
+		opcode = 3'b011; //Subtracting large negative number with large positive number to check for overflow
+		A = 8'h80;
+		B = 8'h7F;
+		R = 8'h01;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b0) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");	
+		if(overflow != 1'b1) $display("Overflow is wrong");
 		// ---------------------------------------------
 		// Testing ANDS 
 		// ---------------------------------------------
@@ -189,6 +212,8 @@ module lab1_tb;
 		if(zero != 1'b1) $display("Zero is wrong");
 		if(carryout != 1'b0) $display("Carryout is wrong");	
 		if(overflow != 1'b0) $display("Overflow is wrong");
+		
+		$display("Testing Complete");
 	end
       
 endmodule

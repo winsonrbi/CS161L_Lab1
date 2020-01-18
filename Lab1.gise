@@ -19,7 +19,7 @@
 
   <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
 
-  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="../lab1/lab1.xise"/>
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Lab1.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
@@ -49,8 +49,9 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1579290888" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1579290888">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1579291326" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1579291326">
+    <transform xil_pn:end_ts="1579375336" xil_pn:in_ck="-8987305328132442593" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1579375336">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -72,7 +73,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1579291326" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1579291326">
+    <transform xil_pn:end_ts="1579375336" xil_pn:in_ck="-8987305328132442593" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1579375336">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -83,7 +84,7 @@
       <outfile xil_pn:name="alu.v"/>
       <outfile xil_pn:name="lab1_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1579291328" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:start_ts="1579291326">
+    <transform xil_pn:end_ts="1579375337" xil_pn:in_ck="-8987305328132442593" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-382711420682020199" xil_pn:start_ts="1579375336">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -98,7 +99,7 @@
       <outfile xil_pn:name="lab1_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1579291328" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:start_ts="1579291328">
+    <transform xil_pn:end_ts="1579375338" xil_pn:in_ck="-5136052565335174140" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5430738265408571428" xil_pn:start_ts="1579375337">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -110,6 +111,7 @@
     </transform>
     <transform xil_pn:end_ts="1579290059" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1579290059">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1579290059" xil_pn:name="TRAN_schematicsToHdl" xil_pn:start_ts="1579290059">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -135,8 +137,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1579297948" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:start_ts="1579297945">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1579376401" xil_pn:in_ck="119044582" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="1725297784626187757" xil_pn:start_ts="1579376395">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="InputChanged"/>
@@ -145,11 +148,16 @@
       <outfile xil_pn:name="alu.ngc"/>
       <outfile xil_pn:name="alu.ngr"/>
       <outfile xil_pn:name="alu.prj"/>
+      <outfile xil_pn:name="alu.stx"/>
       <outfile xil_pn:name="alu.syr"/>
       <outfile xil_pn:name="alu.xst"/>
       <outfile xil_pn:name="alu_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1579376260" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="3734212952591172" xil_pn:start_ts="1579376260">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
   </transforms>
 
