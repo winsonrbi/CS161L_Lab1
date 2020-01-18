@@ -116,7 +116,40 @@ module alu # ( parameter NUMBITS = 8)(
 					end
 				end
 				
+				3'b101: begin //bitwise OR
+					result = A | B;
+					carryout = 1'b0;
+					overflow = 1'b0;
+					if(result == 8'b00000000) begin
+						zero = 1'b1;
+					end
+					else begin
+						zero = 1'b0;
+					end
+				end
 				
+				3'b110: begin //bitwise XOR
+					result = A ^ B;
+					carryout = 1'b0;
+					overflow = 1'b0;
+					if(result == 8'b00000000) begin
+						zero = 1'b1;
+					end
+					else begin
+						zero = 1'b0;
+					end
+				end
+				3'b111: begin // divide A by 2
+					result = A/2;
+					carryout = 1'b0;
+					overflow = 1'b0;
+					if(result == 8'b00000000) begin
+						zero = 1'b1;
+					end
+					else begin
+						zero = 1'b0;
+					end
+				end
 				default: $display("Opcode Error");
 			endcase
 		end

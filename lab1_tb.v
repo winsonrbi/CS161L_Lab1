@@ -213,6 +213,123 @@ module lab1_tb;
 		if(carryout != 1'b0) $display("Carryout is wrong");	
 		if(overflow != 1'b0) $display("Overflow is wrong");
 		
+		// ----------------------------------------
+		// ORs 
+		// ---------------------------------------- 
+		$display("TC61 OR Testing");
+		opcode = 3'b101; //ORing all 1's with all 0's
+		A = 8'hFF;
+		B = 8'h00;
+		R = 8'hFF;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b0) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");
+		if(overflow != 1'b0) $display("Overflow is wrong");
+
+		$display("TC62 OR Testing");
+		opcode = 3'b101; //ORing all 1's with all 1's
+		A = 8'hFF;
+		B = 8'hFF;
+		R = 8'hFF;		
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b0) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");	
+		if(overflow != 1'b0) $display("Overflow is wrong");
+
+		$display("TC63 OR Testing");
+		opcode = 3'b101; //ORing all 0's with all 0's
+		A = 8'h00;
+		B = 8'h00;
+		R = 8'h00;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b1) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");	
+		if(overflow != 1'b0) $display("Overflow is wrong");	
+		// ----------------------------------------
+		// XORs 
+		// ---------------------------------------- 
+		$display("TC71 XOR Testing");
+		opcode = 3'b110; //XORing all 1's with all 0's
+		A = 8'hFF;
+		B = 8'h00;
+		R = 8'hFF;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b0) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");
+		if(overflow != 1'b0) $display("Overflow is wrong");
+
+		$display("TC71 XOR Testing");
+		opcode = 3'b110; //XORing all 1's with all 1's
+		A = 8'hFF;
+		B = 8'hFF;
+		R = 8'h00;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b1) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");	
+		if(overflow != 1'b0) $display("Overflow is wrong");
+
+		$display("TC73 XOR Testing");
+		opcode = 3'b110; //XORing all 0's with all 0's
+		A = 8'h00;
+		B = 8'h00;
+		R = 8'h00;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b1) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");	
+		if(overflow != 1'b0) $display("Overflow is wrong");	
+
+		$display("TC74 XOR Testing");
+		opcode = 3'b110; //XORing all 0's with all 1's
+		A = 8'h00;
+		B = 8'hFF;
+		R = 8'hFF;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b0) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");
+		if(overflow != 1'b0) $display("Overflow is wrong");
+		// ----------------------------------------
+		// Div 2 
+		// ----------------------------------------
+		$display("TC81 Div 2 Testing");
+		opcode = 3'b111; //Dividing 255 by 2, B should not affect the result
+		A = 8'hFF;
+		B = 8'hFF;
+		R = 8'h7F;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b0) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");
+		if(overflow != 1'b0) $display("Overflow is wrong");
+
+		$display("TC82 Div 2 Testing");
+		opcode = 3'b111; //Dividing 0 by 2, B should not affect the result
+		A = 8'h00;
+		B = 8'h0F;
+		R = 8'h00;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b1) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");	
+		if(overflow != 1'b0) $display("Overflow is wrong");
+
+		$display("TC83 Div 2 Testing");
+		opcode = 3'b111; //Dividing 1 by 2, B should not affect the result
+		A = 8'h01;
+		B = 8'hE0;
+		R = 8'h00;
+		#500;
+		if(R != result) $display ("Result is wrong");
+		if(zero != 1'b1) $display("Zero is wrong");
+		if(carryout != 1'b0) $display("Carryout is wrong");	
+		if(overflow != 1'b0) $display("Overflow is wrong");	
+		
 		$display("Testing Complete");
 	end
       
